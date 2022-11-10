@@ -6,7 +6,7 @@ const colorElem = document.querySelector('.colors');
 
 
 axios
-    .get(`https://api-tutor.herokuapp.com/v1/cars`)
+    .get('https://api-tutor.herokuapp.com/v1/cars')
         .then(result => {
             const posts = result.data;
             
@@ -17,7 +17,7 @@ axios
     })
 
 axios 
-    .get(`https://api-tutor.herokuapp.com/v1/colors`)
+    .get('https://api-tutor.herokuapp.com/v1/colors')
     .then( apiData => {
         const colors = apiData.data;
         let list = userTemplate({
