@@ -4,6 +4,8 @@ const colorTemplateText = document.querySelector('.myColorsTemplate');
 const userColorsTemplate = Handlebars.compile(colorTemplateText.innerText);
 const carMakesTemplateText = document.querySelector('.carMakes');
 const userCarMakeTemplate = Handlebars.compile(carMakesTemplateText.innerText);
+const filtButton = document.querySelector('.filButton')
+
 
 
 const usersElem = document.querySelector('.users');
@@ -38,11 +40,27 @@ axios
     .get('https://api-tutor.herokuapp.com/v1/makes')
     .then(apiData => {
         const makes = apiData.data;
-        console.log(makes)
+        
         let listOfMakes = userCarMakeTemplate({
             cars : makes
         })
         carsElem.innerHTML = listOfMakes
     })
+
+
+filtButton.addEventListener("click",()=>{
+    const make = document.querySelector('#cars')
+    const ourValue = make.value;
+
+    axios
+    .get(`https://api-tutor.herokuapp.com/v1/cars/make/${ourValue}`)
+        .then(result => {
+            const posts = result.data;            
+            let list = userCarsTemplate({
+                cars : posts  
+            })
+            usersElem.innerHTML = list
+    })   
+});
 
 

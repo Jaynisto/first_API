@@ -16,13 +16,14 @@
     <div class="carModels">
         <script class="carMakes" type="text/template-x">
             <label for="cars">Choose a car:</label>
-            <select name="make">
+            <select id="cars" name="make">
             {{#each cars}}
-            <option value="volvo">{{this}}</option>
+            <option value="{{this}}">{{this}}</option>
             {{/each}}
             </select>
         </script>
     </div>
+    <button type="submit" class="filButton">Filter</button>
 
     <table class="table table-hover">
         <thead>
@@ -38,7 +39,7 @@
                 {{#each cars}}
                 <tr>
                     <td>{{make}}</td>
-                    <td>{{make}}</td>
+                    <td>{{model}}</td>
                     <td>{{color}}</td>
                 </tr>
                 {{/each}}
@@ -46,7 +47,7 @@
 
         </tbody>
     </table>
-    <hr>
+    <hr><script src="index.js" defer></script> 
     <br>
     My Favorite colors:<br>
     <div class="colors">
@@ -59,6 +60,6 @@
         </script>
 
     </div>
-    <script src="index.js" defer></script>    
+       
 </body>
 </html>
