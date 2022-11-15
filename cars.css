@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+}
+
+.dropDowns {
+    display:flex;
+    justify-content: space-between;
+}
+
+.table {
+    border: solid 2px black;
+
+}
+
+.links {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tables {
+    display: flex;
+    justify-content: space-evenly;
+}

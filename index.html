@@ -4,63 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="cars.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
     <title>API Introduction</title>
 </head>
 <body>
-    <h1>My First API APP</h1><br><br>
-    <div class="carModels">
-        <script class="carMakes" type="text/template-x">
-            <label for="cars">Choose a car:</label>
-            <select id="cars" name="make">
-            {{#each cars}}
-            <option value="{{this}}">{{this}}</option>
-            {{/each}}
-            </select>
-        </script>
-    </div>
-    <button type="submit" class="filButton">Filter</button>
+   <div class="links">
+    <a href="filterByModels.html" style="text-decoration: none;">Filter By Models</a>
+    <a href="filterByColors.html" style="text-decoration: none;">Filter By Colors</a>
+   </div>
+    <hr>
 
-    <table class="table table-hover">
+<div class="tables">
+
+    <table class="table">
         <thead>
             <tr>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Color</th>
+                <th>Brands</th>
             </tr>
         </thead>
-        <tbody class="users">
+        <tbody class="getBrand">
             <!-- Put data from the API in here -->
-            <script class="myCarsTemplate" type="text/template-x">
+            <script class="myBrandTemplate" type="text/template-x">
                 {{#each cars}}
-                <tr>
-                    <td>{{make}}</td>
-                    <td>{{model}}</td>
-                    <td>{{color}}</td>
-                </tr>
+                <li>
+                    {{this}}
+                </li>
                 {{/each}}
             </script>
 
         </tbody>
-    </table>
-    <br>
-    My Favorite colors:<br>
-    <div class="colors">
-        <script class="myColorsTemplate" type="text/template-x">
-            <div>
-                {{#each color}}
-                  <li>{{this}}</li>
+    </table><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Colors</th>
+            </tr>
+        </thead>
+        <tbody class="getColor">
+            <!-- Put data from the API in here -->
+            <script class="myColorsTemplate" type="text/template-x">
+                {{#each colors}}
+                <li>
+                    {{this}}
+                </li>
                 {{/each}}
-            </div>
-        </script>
-
-    </div>
-       
+            </script>
+        </tbody>
+    </table>
+</div>
+    
 </body>
-<hr><script src="index.js" defer></script> 
+<script src="index.js" defer></script> 
 
 </html>

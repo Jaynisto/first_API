@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cars.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js" integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
+    <title>API Introduction</title>
+</head>
+<body>
+    <h1>My First API App</h1><br><br>
+   
+    <h5>The Below Colors Are The Ones We Have.</h5><br>
+    <div class="myColors">
+        <script class="myColorsTemplate" type="text/template-x">
+            <label for="colors">Choose a Color:</label>
+            <select id="color" name="color">
+            {{#each colors}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+            </select>
+        </script>
+    </div><br>
+    <button class="colorButton">Filter</button>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Color</th>
+            </tr>
+        </thead>
+        <tbody class="getColors">
+            <!-- Put data from the API in here -->
+            <script class="myCarsTemplate" type="text/template-x">
+                {{#each cars}}
+                <tr>
+                    <td>{{make}}</td>
+                    <td>{{model}}</td>
+                    <td>{{color}}</td>
+                </tr>
+                {{/each}}
+            </script>
+
+        </tbody>
+    </table>
+       
+</body>
+<hr><script src="colors.js" defer></script> 
+
+</html>
